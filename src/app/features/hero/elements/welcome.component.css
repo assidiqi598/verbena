@@ -1,0 +1,10 @@
+.hero-welcome {
+  font-size: 4rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+  .hero-welcome {
+    font-size: 3rem;
+  }
+}

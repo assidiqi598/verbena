@@ -1,0 +1,85 @@
+.spin {
+  display: inline-block; /* ensure transform box */
+  animation: spin 1s linear infinite;
+  transform-origin: center center; /* ensure proper rotation axis */
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bounce {
+  position: relative;
+}
+
+.loader-bounce {
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 20%,
+    /* light source from top-left */ #ffffff 0%,
+    /*   bright highlight */ var(--color-tertiary) 30%,
+    /* base color */ var(--color-secondary) 70%,
+    /* darker tone */ var(--color-primary) 100% /* darkest at edges */
+  );
+  box-shadow: inset -5px -10px 20px rgba(0, 0, 0, 0.4),
+    /* inner shading */ 0 10px 20px rgba(0, 0, 0, 0.3);
+  animation: bounce 1s ease-in-out infinite;
+  transform-origin: center top;
+}
+
+.loader-bounce.dark-theme {
+  background: radial-gradient(
+    circle at 50% 20%,
+    /* light source from top-left */ #ffffff 0%,
+    /*   bright highlight */ #e4e4e4 30%,
+    /* base color */ #cfcece 70%,
+    /* darker tone */ #bababa 100% /* darkest at edges */
+  );
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.shadow {
+  position: absolute;
+  bottom: -4.5rem;
+  left: -1.1rem;
+  width: 100px;
+  height: 30px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  border-radius: 50%;
+  filter: blur(5px);
+  margin: 60px auto;
+  animation: shrink-expand 1s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes shrink-expand {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

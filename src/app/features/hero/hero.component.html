@@ -1,0 +1,13 @@
+<section id="hero-section-id" class="section">
+  @defer {
+  <welcome></welcome>
+  } @loading (minimum 2s) {
+  <loader type="bounce" />
+  } @if (isMobile) {
+  <div [class.dark-theme]="theme.isDarkMode()" class="swipe-up"></div>
+  } @else {
+  <div [class.dark-theme]="theme.isDarkMode()" class="scroll-down">
+    <div class="wheel">|</div>
+  </div>
+  }
+</section>

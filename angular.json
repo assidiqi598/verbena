@@ -59,7 +59,8 @@
               "buildTarget": "verbena:build:production"
             },
             "development": {
-              "buildTarget": "verbena:build:development"
+              "buildTarget": "verbena:build:development",
+              "hmr": false
             }
           },
           "defaultConfiguration": "development"

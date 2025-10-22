@@ -1,0 +1,8 @@
+@if (type() === "bounce") {
+<div class="bounce">
+  <div [class.dark-theme]="theme.isDarkMode()" class="loader-bounce"></div>
+  <div class="shadow"></div>
+</div>
+} @else {
+<ng-icon class="spin" name="lucideLoaderPinwheel" />
+}

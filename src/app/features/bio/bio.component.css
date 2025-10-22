@@ -1,0 +1,20 @@
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
+  font-family: Courier New;
+}
+
+.my-name {
+  font-size: 4rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 650px) {
+  .my-name {
+    font-size: 3rem;
+  }
+}

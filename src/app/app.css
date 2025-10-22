@@ -1,0 +1,33 @@
+.float {
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  border-radius: 50%;
+  border-width: 0;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  background-color: #456882;
+  color: white;
+  z-index: 999;
+}
+
+.float.dark-theme {
+  background-color: var(--color-quaternary);
+  color: var(--color-primary);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.content {
+  background-color: #e9f6ff;
+  color: var(--color-primary);
+}
+
+.content.dark-theme {
+  background-color: var(--color-primary);
+  color: white;
+}
