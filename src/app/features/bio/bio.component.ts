@@ -7,5 +7,6 @@ import { Loader } from '../../shared/loader/loader.component';
   templateUrl: './bio.component.html',
   styleUrl: './bio.component.css',
   imports: [Definition, Loader],
+  standalone: true
 })
 export class Bio {}

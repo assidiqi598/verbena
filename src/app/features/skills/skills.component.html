@@ -1,0 +1,5 @@
+<section id="skills-section-id" class="section">
+  @for (s of skills; track s.id) {
+  <p [id]="s.id" class="skill">{{ s.name }}</p>
+  }
+</section>

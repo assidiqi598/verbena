@@ -5,10 +5,12 @@ import { ThemeService } from './core/services/theme.service';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideSun, lucideMoonStar } from '@ng-icons/lucide';
 import { Bio } from './features/bio/bio.component';
+import { Skills } from './features/skills/skills.component';
+import { Certification } from './features/certification/certification.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Hero, Bio, NgIcon],
+  imports: [RouterOutlet, Hero, Bio, NgIcon, Skills, Certification],
   templateUrl: './app.html',
   styleUrl: './app.css',
   viewProviders: [provideIcons({ lucideSun, lucideMoonStar })],

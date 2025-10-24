@@ -3,6 +3,7 @@
   --color-secondary: #234c6a;
   --color-tertiary: #456882;
   --color-quaternary: #d2c1b6;
+  --color-quinary: #e9f6ff;
 }
 
 html,
@@ -14,4 +15,10 @@ body {
 
 .section {
   scroll-snap-align: start;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  height: 100%;
+  touch-action: none; /* disables touch scrolling on mobile */
 }

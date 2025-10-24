@@ -11,10 +11,19 @@
 .my-name {
   font-size: 4rem;
   text-align: center;
+  margin: 0 10px;
+}
+
+.bio {
+  max-width: 50%;
 }
 
 @media screen and (max-width: 650px) {
   .my-name {
     font-size: 3rem;
+  }
+
+  .bio {
+    max-width: 80%;
   }
 }

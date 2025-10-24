@@ -6,6 +6,7 @@ import { takeUntil } from 'rxjs/operators';
   selector: 'welcome',
   templateUrl: './welcome.component.html',
   styleUrl: './welcome.component.css',
+  standalone: true,
 })
 export class Welcome implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();

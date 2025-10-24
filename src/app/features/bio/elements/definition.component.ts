@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
   selector: 'definition',
   templateUrl: './definition.component.html',
   styleUrl: './definition.component.css',
+  standalone: true,
 })
 export class Definition implements OnInit, OnDestroy {
   private remove$ = new Subject<void>();
