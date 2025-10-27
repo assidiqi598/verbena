@@ -1,5 +1,13 @@
 <section id="skills-section-id" class="section">
   @for (s of skills; track s.id) {
-  <p [id]="s.id" class="skill">{{ s.name }}</p>
+  <img
+    [id]="s.id"
+    [ngSrc]="s.imgUrl"
+    class="skill"
+    [alt]="s.name"
+    [title]="s.name"
+    [width]="device.isMobile ? '32' : '96'"
+    [height]="device.isMobile ? '32' : '96'"
+  />
   }
 </section>

@@ -5,6 +5,17 @@
   padding: 1rem 1rem 0;
   margin: 1rem;
   width: 20%;
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transform: scale(0);
+  animation-name: popup;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
   a {
     color: white;
@@ -14,11 +25,26 @@
 .certificate.dark-mode {
   background-color: var(--color-quinary);
   color: var(--color-primary);
+
+  a {
+    color: var(--color-primary);
+  }
 }
 
 @media screen and (max-width: 650px) {
   .certificate {
     width: 30%;
-    height: 9rem;
+  }
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
   }
 }

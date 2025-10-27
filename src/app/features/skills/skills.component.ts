@@ -1,4 +1,4 @@
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
 import { Component, inject, PLATFORM_ID } from '@angular/core';
 import { DeviceService } from '../../core/services/device.service';
 
@@ -7,9 +7,10 @@ import { DeviceService } from '../../core/services/device.service';
   selector: 'skills',
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css',
+  imports: [NgOptimizedImage],
 })
 export class Skills {
-  private device = inject(DeviceService);
+  device = inject(DeviceService);
 
   private platformId = inject(PLATFORM_ID);
   private isBrowser = isPlatformBrowser(this.platformId);
@@ -18,8 +19,8 @@ export class Skills {
   private observer!: IntersectionObserver;
   private isInViewport: boolean = false;
   private totalScrollDistance: number = 0;
-  private low: number = -500;
-  private high: number = 12500;
+  private low: number = -1000;
+  private high: number = 7500;
 
   //for mobile
   private lastTouchY = 0;
@@ -33,6 +34,7 @@ export class Skills {
     translateYPrefix: string;
     translationXRatio: number;
     translationYRatio: number;
+    imgUrl: string;
   }[] = [
     {
       id: 'typescript',
@@ -43,116 +45,128 @@ export class Skills {
       translateYPrefix: '',
       translationXRatio: 1,
       translationYRatio: 0,
+      imgUrl: '/assets/Typescript.svg',
     },
     {
       id: 'react',
       name: 'React',
-      upperBoundary: 2000,
-      lowerBoundary: 1000,
+      upperBoundary: 1500,
+      lowerBoundary: 500,
       translateXPrefix: '-',
       translateYPrefix: '-',
       translationXRatio: 0.9,
-      translationYRatio: 0.4,
+      translationYRatio: 0.5,
+      imgUrl: '/assets/React.svg',
     },
     {
       id: 'angular',
       name: 'Angular',
-      upperBoundary: 3000,
-      lowerBoundary: 2000,
+      upperBoundary: 2000,
+      lowerBoundary: 1000,
       translateXPrefix: '-',
       translateYPrefix: '-',
-      translationXRatio: 0.6,
-      translationYRatio: 0.8,
+      translationXRatio: 0.5,
+      translationYRatio: 0.85,
+      imgUrl: '/assets/Angular.png',
     },
     {
       id: 'flutter',
       name: 'Flutter',
-      upperBoundary: 4000,
-      lowerBoundary: 3000,
+      upperBoundary: 2500,
+      lowerBoundary: 1500,
       translateXPrefix: '',
       translateYPrefix: '-',
       translationXRatio: 0,
       translationYRatio: 1,
+      imgUrl: '/assets/Flutter.svg',
     },
     {
       id: 'nextjs',
       name: 'NextJS',
-      upperBoundary: 5000,
-      lowerBoundary: 4000,
+      upperBoundary: 3000,
+      lowerBoundary: 2000,
       translateXPrefix: '',
       translateYPrefix: '-',
-      translationXRatio: 0.6,
-      translationYRatio: 0.8,
+      translationXRatio: 0.5,
+      translationYRatio: 0.85,
+      imgUrl: '/assets/Nextjs.png',
     },
     {
       id: 'nodejs',
       name: 'NodeJS',
-      upperBoundary: 6000,
-      lowerBoundary: 5000,
+      upperBoundary: 3500,
+      lowerBoundary: 2500,
       translateXPrefix: '',
       translateYPrefix: '-',
       translationXRatio: 0.9,
-      translationYRatio: 0.4,
-    },
-    {
-      id: 'nestjs',
-      name: 'NestJS',
-      upperBoundary: 7000,
-      lowerBoundary: 6000,
-      translateXPrefix: '',
-      translateYPrefix: '',
-      translationXRatio: 1,
-      translationYRatio: 0,
+      translationYRatio: 0.5,
+      imgUrl: '/assets/Nodejs.svg',
     },
     {
       id: 'docker',
       name: 'Docker',
-      upperBoundary: 8000,
-      lowerBoundary: 7000,
+      upperBoundary: 4000,
+      lowerBoundary: 3000,
       translateXPrefix: '',
       translateYPrefix: '',
-      translationXRatio: 0.9,
-      translationYRatio: 0.4,
+      translationXRatio: 1,
+      translationYRatio: 0,
+      imgUrl: '/assets/Docker.svg',
     },
     {
       id: 'kubernetes',
       name: 'Kubernetes',
-      upperBoundary: 9000,
-      lowerBoundary: 8000,
+      upperBoundary: 4500,
+      lowerBoundary: 3500,
       translateXPrefix: '',
       translateYPrefix: '',
-      translationXRatio: 0.65,
-      translationYRatio: 0.75,
+      translationXRatio: 0.9,
+      translationYRatio: 0.5,
+      imgUrl: '/assets/Kubernetes.svg',
     },
     {
-      id: 'azure-functions',
-      name: 'Azure Functions',
-      upperBoundary: 10000,
-      lowerBoundary: 9000,
+      id: 'cloudflare',
+      name: 'Cloudflare',
+      upperBoundary: 5000,
+      lowerBoundary: 4000,
+      translateXPrefix: '',
+      translateYPrefix: '',
+      translationXRatio: 0.5,
+      translationYRatio: 0.85,
+      imgUrl: '/assets/Cloudflare.svg',
+    },
+    {
+      id: 'azure',
+      name: 'Azure',
+      upperBoundary: 5500,
+      lowerBoundary: 4500,
       translateXPrefix: '',
       translateYPrefix: '',
       translationXRatio: 0,
       translationYRatio: 1,
+      imgUrl: '/assets/Azure.svg',
     },
     {
       id: 'golang',
-      name: 'Go',
-      upperBoundary: 11000,
-      lowerBoundary: 10000,
+      name: 'Go Programming Language',
+      upperBoundary: 6000,
+      lowerBoundary: 5000,
       translateXPrefix: '-',
       translateYPrefix: '',
-      translationXRatio: 0.65,
-      translationYRatio: 0.75,
+      translationXRatio: 0.5,
+      translationYRatio: 0.85,
+      imgUrl: '/assets/Go.svg',
     },
     {
       id: 'python',
       name: 'Python',
-      upperBoundary: 12000,
-      lowerBoundary: 11000,
+      upperBoundary: 6500,
+      lowerBoundary: 5500,
       translateXPrefix: '-',
       translateYPrefix: '',
       translationXRatio: 0.9,
-      translationYRatio: 0.4,
+      translationYRatio: 0.5,
+      imgUrl: '/assets/Python.svg',
     },
   ];
 

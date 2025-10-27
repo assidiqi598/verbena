@@ -9,9 +9,12 @@
 
 .skill {
   position: absolute;
-  x: 50%;
-  y: 50%;
-  transition: transform 0.3s ease;
+  transition: transform 0.1s ease;
   opacity: 0;
-  /* transform: translate(-50%, -50%); */
+}
+
+@media screen and (max-width: 650px) {
+  .skill {
+    margin-bottom: 20rem;
+  }
 }

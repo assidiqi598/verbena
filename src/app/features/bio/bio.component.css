@@ -16,6 +16,15 @@
 
 .bio {
   max-width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacts {
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 650px) {

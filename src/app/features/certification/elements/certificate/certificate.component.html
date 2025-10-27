@@ -1,5 +1,10 @@
-@for (c of certificates; track c.id) {
-<div class="certificate" [class.dark-mode]="theme.isDarkMode()">
+@for (c of certificates; track c.id; let i = $index) {
+<div
+  [id]="c.id"
+  class="certificate"
+  [style.animation-delay]="i * 0.2 + 's'"
+  [class.dark-mode]="theme.isDarkMode()"
+>
   <a [href]="c.link" target="_blank">{{ c.title }}</a>
   <p>{{ c.issuer }}</p>
 </div>
