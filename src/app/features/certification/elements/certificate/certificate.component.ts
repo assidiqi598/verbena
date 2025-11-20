@@ -16,6 +16,12 @@ export class Certificate {
       issuer: 'Microsoft',
     },
     {
+      id: 'microsoft-365-fundamentals',
+      title: 'Microsoft 365 Certified: Fundamentals',
+      link: 'https://learn.microsoft.com/en-gb/users/verbenaharitzahassidiqi-2802/credentials/7501914b9f84572d',
+      issuer: 'Microsoft',
+    },
+    {
       id: 'dicoding-microservices',
       title: 'Belajar Membangun Arsitektur Microservices',
       link: 'https://www.dicoding.com/certificates/MEPJQD4JWX3V',
